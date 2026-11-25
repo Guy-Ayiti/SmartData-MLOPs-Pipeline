@@ -1,0 +1,57 @@
+18:39:56 | PIPELINE | INFO | ==========================================================
+18:39:56 | PIPELINE | INFO |   PIPELINE BANCO WIESSE — 2026-11-24 18:39:56
+18:39:56 | PIPELINE | INFO |   Versión: run-local
+18:39:56 | PIPELINE | INFO | ==========================================================
+18:39:56 | PIPELINE | INFO | >>> Iniciando : Etapa 1: Ingestion
+18:39:56 | PIPELINE | INFO | === ETAPA 1: INGESTION ===
+18:39:56 | PIPELINE | INFO | Cargado: 150000 filas x 12 columnas
+18:39:56 | PIPELINE | INFO |   Mto_ingreso_mensual: 29731 NA-strings convertidos a NaN
+18:39:56 | PIPELINE | INFO |   Nro_dependiente: 3924 NA-strings convertidos a NaN
+18:39:56 | PIPELINE | INFO |   Prct_uso_tc: 3338 outliers tratados [0.00, 1.00]
+18:39:56 | PIPELINE | INFO |   Prct_deuda_vs_ingresos: 14993 outliers tratados [0.00, 2449.00]
+18:39:56 | PIPELINE | INFO |   Mto_ingreso_mensual: 12013 outliers tratados [1300.00, 14587.60]
+18:39:57 | PIPELINE | INFO |   Mto_ingreso_mensual: 1 nulos imputados con median (5400.0000)
+18:39:57 | PIPELINE | INFO |   Nro_dependiente: 1 nulos imputados con mode (0.0000)
+18:39:57 | PIPELINE | INFO | Artefacto guardado: C:\Users\guy3h\Downloads\GitHub\SmartData-MLOPs-Pipeline\artifacts\data_clean.csv
+18:39:57 | PIPELINE | INFO | === ETAPA 1 COMPLETADA ===
+18:39:57 | PIPELINE | INFO | <<< Completada: Etapa 1: Ingestion  (1.03 s)
+18:39:57 | PIPELINE | INFO | >>> Iniciando : Etapa 2: Features
+18:39:57 | PIPELINE | INFO | === ETAPA 2: FEATURES ===
+18:39:57 | PIPELINE | INFO | Cargado: 150000 filas x 12 columnas
+18:39:57 | PIPELINE | INFO | Features creadas: 31 columnas totales
+18:39:58 | PIPELINE | INFO | Top-15 features: ['Prct_uso_tc', 'Prct_uso_tc_std', 'Nro_prestao_retrasados']...
+18:39:59 | PIPELINE | INFO | Artefacto guardado: C:\Users\guy3h\Downloads\GitHub\SmartData-MLOPs-Pipeline\artifacts\features.csv
+18:39:59 | PIPELINE | INFO | === ETAPA 2 COMPLETADA ===
+18:39:59 | PIPELINE | INFO | <<< Completada: Etapa 2: Features  (1.99 s)
+18:39:59 | PIPELINE | INFO | >>> Iniciando : Etapa 3: Entrenamiento
+18:39:59 | PIPELINE | INFO | === ETAPA 3: ENTRENAMIENTO ===
+18:40:06 | PIPELINE | INFO |   LogisticRegression: F1=0.2974 Recall=0.7426
+18:40:06 | PIPELINE | INFO |   RandomForest: F1=0.3330 Recall=0.7791
+18:40:11 | PIPELINE | INFO |   GradientBoosting: F1=0.3319 Recall=0.7751
+18:40:30 | PIPELINE | INFO | Mejor: RandomForest | F1=0.3330 | Recall=0.7791
+18:40:30 | PIPELINE | INFO | Artefactos guardados: modelo.pkl | X_test.csv | y_test.csv
+18:40:30 | PIPELINE | INFO | === ETAPA 3 COMPLETADA ===
+18:40:30 | PIPELINE | INFO | <<< Completada: Etapa 3: Entrenamiento  (31.02 s)
+18:40:30 | PIPELINE | INFO | >>> Iniciando : Etapa 4: Evaluación
+18:40:30 | PIPELINE | INFO | === ETAPA 4: EVALUACIÓN ===
+18:40:30 | PIPELINE | INFO |   Accuracy=0.7914  Precision=0.2117  Recall=0.7791  F1=0.3330
+18:40:30 | PIPELINE | INFO |   FN=443  FP=5815  Costo=$10,245,000
+18:40:30 | PIPELINE | INFO | Métricas guardadas: C:\Users\guy3h\Downloads\GitHub\SmartData-MLOPs-Pipeline\artifacts\metrics.json
+18:40:31 | PIPELINE | INFO | Reporte guardado: C:\Users\guy3h\Downloads\GitHub\SmartData-MLOPs-Pipeline\artifacts\reporte_evaluacion.png
+18:40:31 | PIPELINE | INFO | === ETAPA 4 COMPLETADA ===
+18:40:31 | PIPELINE | INFO | <<< Completada: Etapa 4: Evaluación  (0.79 s)
+18:40:31 | PIPELINE | INFO | ==========================================================
+18:40:31 | PIPELINE | INFO |   PIPELINE COMPLETADO EN 34.83 segundos
+18:40:31 | PIPELINE | INFO | ==========================================================
+18:40:31 | PIPELINE | INFO |   [OK] Etapa 1: Ingestion             (1.03 s)
+18:40:31 | PIPELINE | INFO |   [OK] Etapa 2: Features              (1.99 s)
+18:40:31 | PIPELINE | INFO |   [OK] Etapa 3: Entrenamiento         (31.02 s)
+18:40:31 | PIPELINE | INFO |   [OK] Etapa 4: Evaluación            (0.79 s)
+18:40:31 | PIPELINE | INFO | 
+18:40:31 | PIPELINE | INFO |   MÉTRICAS FINALES:
+18:40:31 | PIPELINE | INFO |     Modelo  : RandomForestClassifier
+18:40:31 | PIPELINE | INFO |     Recall  : 0.7791  (umbral: 0.48)
+18:40:31 | PIPELINE | INFO |     F1      : 0.3330
+18:40:31 | PIPELINE | INFO |     FN      : 443 defaults no detectados
+18:40:31 | PIPELINE | INFO |     Costo   : $10,245,000
+18:40:31 | PIPELINE | INFO |     Reporte : C:\Users\guy3h\Downloads\GitHub\SmartData-MLOPs-Pipeline\artifacts\reporte_evaluacion.png

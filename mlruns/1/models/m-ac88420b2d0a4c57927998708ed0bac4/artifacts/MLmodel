@@ -1,0 +1,24 @@
+artifact_path: file:///C:/Users/guy3h/Downloads/GitHub/SmartData-MLOPs-Pipeline/mlruns/1/models/m-ac88420b2d0a4c57927998708ed0bac4/artifacts
+flavors:
+  python_function:
+    env:
+      conda: conda.yaml
+      virtualenv: python_env.yaml
+    loader_module: mlflow.sklearn
+    model_path: model.skops
+    predict_fn: predict
+    python_version: 3.11.3
+  sklearn:
+    code: null
+    pickled_model: model.skops
+    serialization_format: skops
+    sklearn_version: 1.9.1
+    skops_trusted_types:
+    - sklearn.tree._tree.Tree
+mlflow_version: 3.18.0
+model_id: m-ac88420b2d0a4c57927998708ed0bac4
+model_size_bytes: 9548324
+model_uuid: m-ac88420b2d0a4c57927998708ed0bac4
+prompts: null
+run_id: efb5e82310b14aa7a6176a7bcc5b9bf1
+utc_time_created: '2026-11-25 00:40:11.224088'
